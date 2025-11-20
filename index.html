@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+
+<html lang="ar"><head><meta charset="utf-8"/><title>مНИИПУ – عرض تعريفي / Презентация МНИИПУ</title><meta content="width=device-width, initial-scale=1" name="viewport"/><style>
+:root {
+  --bg: #020617;
+  --accent: #2563eb;
+  --accent-soft: rgba(37,99,235,0.2);
+  --accent-2: #22c55e;
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --border: #1f2937;
+  --radius-xl: 20px;
+  --shadow-soft: 0 22px 55px rgba(0,0,0,0.7);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background: radial-gradient(circle at top,#1e293b 0,#020617 55%);
+  color:var(--text-main);
+}
+.page{
+  max-width:900px;
+  margin:0 auto;
+  padding:28px 12px 56px;
+}
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-bottom:26px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.brand-logo{
+  width:112px;
+  height:112px;
+  min-width:112px;
+  min-height:112px;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.brand-logo-inner{
+  width:100%;
+  height:100%;
+  border-radius:20px;
+  background:#ffffff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  padding:8px;
+  box-shadow:0 12px 28px rgba(15,23,42,0.6);
+  transition:0.25s ease;
+}
+.brand-logo-inner img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  border-radius:0;
+  display:block;
+}
+.brand-text h1{margin:0 0 5px;font-size:28px;letter-spacing:.05em;}
+.brand-text span{font-size:13px;color:var(--text-muted);}
+.tagline{font-size:11px;color:var(--text-muted);}
+
+.lang-switch{
+  display:flex;
+  gap:6px;
+  padding:3px;
+  border-radius:999px;
+  border:1px solid rgba(148,163,184,0.5);
+  background:rgba(15,23,42,0.95);
+  font-size:12px;
+}
+.lang-pill{
+  padding:5px 12px;
+  border-radius:999px;
+  cursor:pointer;
+  border:1px solid transparent;
+  color:var(--text-muted);
+  min-width:42px;
+  text-align:center;
+}
+.lang-pill.active{
+  background:rgba(37,99,235,0.35);
+  border-color:rgba(129,140,248,0.9);
+  color:#e5e7eb;
+}
+
+.slide{
+  position:relative;
+  background:
+    radial-gradient(circle at top left, rgba(37,99,235,0.22), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(34,197,94,0.22), transparent 55%),
+    #020617;
+  border-radius:var(--radius-xl);
+  border:1px solid rgba(148,163,184,0.2);
+  box-shadow:var(--shadow-soft);
+  margin:0 auto 26px;
+  padding:26px 26px 26px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:20px;
+  overflow:hidden;
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.slide::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at top,rgba(148,163,184,0.15),transparent 55%);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s ease;
+}
+.slide:hover{
+  transform:translateY(-4px);
+  box-shadow:0 26px 65px rgba(0,0,0,0.85);
+  border-color:rgba(129,140,248,0.7);
+}
+.slide:hover::before{opacity:1;}
+@media(max-width:900px){
+  .slide{grid-template-columns:minmax(0,1fr);padding:18px 16px 20px;}
+}
+
+.slide-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  color:var(--text-muted);
+  margin-bottom:8px;
+}
+.badge{
+  padding:3px 10px;
+  border-radius:999px;
+  border:1px solid rgba(148,163,184,0.45);
+  background:rgba(15,23,42,0.9);
+}
+.slide-index{opacity:.8;}
+
+.title-ar{margin:2px 0 0;direction:rtl;text-align:right;font-size:22px;
+}
+.title-ru{margin:6px 0 0;font-size:18px;
+  color:#e5e7eb;
+  font-weight:600;
+}
+.text-block{
+  margin-top:10px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.body-ar{direction:rtl;text-align:right;font-size:16px;
+  line-height:1.7;
+  white-space:pre-line;
+}
+.body-ru{font-size:16px;
+  color:var(--text-muted);
+  line-height:1.7;
+  white-space:pre-line;
+  border-top:1px dashed rgba(148,163,184,0.35);
+  padding-top:8px;
+}
+
+.media-col{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  align-items:stretch;
+}
+.media-main{
+  border-radius:18px;
+  overflow:hidden;
+  background:#0f172a;
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 12px 32px rgba(0,0,0,0.45);
+  padding:0;
+  max-height:none;
+  margin-top:16px;
+}
+.media-main img{
+  width:100%;
+  max-width:900px;
+  height:auto;
+  display:block;
+  margin:0 auto;
+}
+
+.flags-row{
+  margin-top:10px;
+}
+.flags-inner{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  justify-content:center;
+  padding:3px 6px 2px;
+}
+
+.note{
+  font-size:11px;
+  color:var(--text-muted);
+}
+.chart-card{
+  margin-top:14px;
+  border-radius:16px;
+  padding:10px 13px 12px;
+  background:radial-gradient(circle at top,rgba(15,118,110,0.3),rgba(15,23,42,0.98));
+  border:1px solid rgba(34,197,94,0.65);
+}
+.chart-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:12px;
+  margin-bottom:6px;
+}
+.chart-title span{font-size:11px;color:var(--text-muted);}
+.chart-body{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.chart-legend{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  font-size:11px;
+}
+.legend-item{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.legend-dot{
+  width:8px;height:8px;
+  border-radius:999px;
+  background:var(--accent-2);
+}
+.footnote{
+  margin-top:30px;
+  font-size:11px;
+  color:var(--text-muted);
+  text-align:center;
+}
+
+/* language modes – AR / RU only (no both) */
+body[data-lang="ar"] .body-ru,
+body[data-lang="ar"] .title-ru{display:none;}
+body[data-lang="ru"] .body-ar,
+body[data-lang="ru"] .title-ar{display:none;}
+
+body[data-lang="ru"] .head-ar{display:none;}
+body[data-lang="ar"] .head-ru{display:none;}
+
+.brand-logo-inner:hover{
+  box-shadow:0 0 25px rgba(89,156,255,0.75),
+             0 0 45px rgba(89,156,255,0.35),
+             0 14px 32px rgba(15,23,42,0.8);
+  transform:scale(1.04);
+}
+
+.body-ru ul{
+  margin:6px 0 0 1.2rem;
+  padding-left:0;
+}
+.body-ru li{
+  margin:2px 0;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const root = document.body;
+  const pills = document.querySelectorAll('.lang-pill');
+  function setLang(mode){
+    root.setAttribute('data-lang', mode);
+    pills.forEach(p => {
+      if(p.dataset.mode === mode){ p.classList.add('active'); }
+      else{ p.classList.remove('active'); }
+    });
+  }
+  pills.forEach(p => {
+    p.addEventListener('click', () => setLang(p.dataset.mode));
+  });
+  setLang('ru'); // по умолчанию русский
+});
+</script>
+</head><body><div class="page">
+<header>
+<div class="brand">
+<div class="brand-logo">
+<div class="brand-logo-inner">
+<img alt="" src="http://mniipu.org/wp-content/uploads/2017/10/logo-mniipu-2a3872-sq-345-291.jpg"/>
+</div>
+</div>
+<div class="brand-text">
+<h1>МНИИПУ · MNIIPU</h1>
+<span class="head-ru">Международный научно-исследовательский институт проблем управления</span><br/>
+<span class="head-ar">المعهد الدولي للبحوث في مشكلات الإدارة</span><br/>
+<span class="head-ru tagline">двуязычная веб-версия презентации</span><br/>
+<span class="head-ar tagline">النسخة الإلكترونية ثنائية اللغة للعرض التعريفي</span>
+<br/>
+</div>
+</div>
+<div class="lang-switch">
+<div class="lang-pill" data-mode="ar">AR</div>
+<div class="lang-pill" data-mode="ru">RU</div>
+</div>
+</header>
+<section class="slide"><div><div class="slide-header"><div class="badge">SLIDE 01</div><div class="slide-index">#01</div></div><h2 class="title-ar">المعهد الدولي للبحوث العلمية لمشكلات الإدارة (مНИИПУ)</h2><h3 class="title-ru">МЕЖДУНАРОДНЫЙ НАУЧНО-ИССЛЕДОВАТЕЛЬСКИЙ ИНСТИТУТ ПРОБЛЕМ УПРАВЛЕНИЯ (МНИИПУ)</h3><div class="text-block"><div class="body-ar">منظمة حكومية دولية تأسست عام 1976.</div><div class="body-ru">Международная межправительственная организация, основан в 1976 г.</div></div><div class="flags-row"><div class="flags-inner">
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Bulgaria.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Flag_of_Hungary.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Flag_of_Cuba.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Mongolia.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg"/>
+</div></div></div></section><section class="slide"><div><div class="slide-header"><div class="badge">SLIDE 02</div><div class="slide-index">#02</div></div><h2 class="title-ar">مНИИПУ</h2><h3 class="title-ru">МНИИПУ</h3><div class="text-block"><div class="body-ar">المعهد الدولي للبحوث في مشكلات الإدارة (مНИИПУ) هو منظمة حكومية دولية تأسست عام 1976 بموجب اتفاق حكومي دولي.
+يرأس المعهد مجلس يتكون من ممثلي الدول المؤسسة، برئاسة الأكاديمي يفغيني فيليخوف، المخوَّل بتنفيذ توجهات حكومة الاتحاد الروسي والأكاديمية الروسية للعلوم.
+الهدف من إنشاء المعهد هو إجراء بحوث شاملة وتطويرات في مجال نظرية وممارسة الإدارة.</div><div class="body-ru">Международный научно-исследовательский институт проблем управления (МНИИПУ) — международная межправительственная организация, созданная в 1976 г. на базе Межправительственного соглашения.
+МНИИПУ возглавляет Совет из представителей стран-учредителей во главе с академиком Е.П. Велиховым, уполномоченным проводить линию Правительства РФ и РАН в этой международной организации.
+Цель создания Института — осуществление комплексных исследований и разработок в области теории и практики управления.</div></div><div class="flags-row"><div class="flags-inner">
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Bulgaria.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Flag_of_Hungary.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Flag_of_Cuba.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Mongolia.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg"/>
+</div></div></div></section><section class="slide"><div><div class="slide-header"><div class="badge">SLIDE 03</div><div class="slide-index">#03</div></div><h2 class="title-ar">الوضع القانوني</h2><h3 class="title-ru">Правовое положение</h3><div class="text-block"><div class="body-ar">الوضع القانوني للمعهد الدولي للبحوث في مشكلات الإدارة هو وضع منظمة حكومية دولية تتمتع بالشخصية القانونية الدولية، ويُنظم وفقاً للاتفاق الحكومي الدولي واتفاقية بودابست لعام 1980. يتمتع المعهد بالحصانة الدبلوماسية.
+
+الوثائق التنظيمية للمعهد:
+▪ اتفاقية إنشاء المعهد الدولي للبحوث في مشكلات الإدارة (9 يوليو 1976)
+▪ البروتوكولات الملحقة بالاتفاقية
+▪ اتفاقية الوضع القانوني والامتيازات والحصانات للمنظمات الاقتصادية الحكومية الدولية (بودابست 1980)
+▪ النظام الأساسي للمعهد
+▪ مرسوم حكومة الاتحاد الروسي بتاريخ 6 يونيو 1992</div><div class="body-ru">Правовое положение МНИИПУ в качестве международной межправительственной организации, наделенной международной правосубъектностью, регулируется действующим межправительственным соглашением и Будапештской Конвенцией 1980 г. МНИИПУ обладает дипломатическим иммунитетом.
+
+Регламентирующие документы МНИИПУ:
+▪ Соглашение о создании Международного научно-исследовательского института проблем управления (подписано 09 июля 1976 г.).
+▪ Протоколы к Соглашению о создании Международного научно-исследовательского института проблем управления.
+▪ Конвенция о правовом статусе, привилегиях и иммунитетах межгосударственных экономических организаций, действующих в определенных областях сотрудничества (Будапешт, 1980 г.).
+▪ Устав МНИИПУ.
+▪ Распоряжение Правительства РФ от 6 июня 1992 г.</div></div><div class="flags-row"><div class="flags-inner">
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Bulgaria.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Flag_of_Hungary.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Flag_of_Cuba.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Mongolia.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg"/>
+</div></div></div></section><section class="slide"><div><div class="slide-header"><div class="badge">SLIDE 04</div><div class="slide-index">#04</div></div><h2 class="title-ar">هيكل الإدارة</h2><h3 class="title-ru">Структура управления</h3><div class="text-block"><div class="body-ar">يُعد المجلس أعلى هيئة لإدارة أنشطة المعهد، ويتألف من ممثلين دائمين تعيّنهم السلطات المختصة في الدول الأعضاء.
+رئيس مجلس المعهد هو الممثل الدائم للاتحاد الروسي، الأكاديمي يفغيني فيليخوف.
+المدير العلمي للمعهد هو الأكاديمي سيرغي يميليانوف.
+المدير العام — البروفيسور ألكسندر أغييف، دكتور في العلوم الاقتصادية.
+
+تشمل هيئات الإدارة الأساسية:
+– المجلس
+– المجلس العلمي
+– لجنة المراجعة
+– المدير العام
+– المجلس العلمي‑التقني
+– المجلس التعليمي‑المنهجي
+– مجلة «مشكلات نظرية وممارسة الإدارة»
+– المدير العلمي
+– نواب المدير
+– المراكز</div><div class="body-ru"><p>Высшим органом руководства деятельностью МНИИПУ является Совет, который состоит из постоянных представителей, назначаемых компетентными органами стран, входящих в состав Института.</p><p>Председатель Совета МНИИПУ — постоянный представитель Российской Федерации в Совете МНИИПУ академик РАН Е. Велихов.</p><p>Научный руководитель МНИИПУ — академик РАН С. Емельянов. Генеральный директор — доктор экономических наук, профессор А. Агеев.</p><p>К основным органам управления МНИИПУ относятся:</p><ul><li>Совет</li><li>Ученый совет</li><li>Ревизионная комиссия</li><li>Генеральный директор</li><li>Научно-технический совет</li><li>Учебно-методический совет</li><li>Журнал «Проблемы теории и практики управления»</li><li>Научный руководитель</li><li>Заместители директора</li><li>Центры</li></ul></div></div><div class="flags-row"><div class="flags-inner">
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Bulgaria.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Flag_of_Hungary.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Flag_of_Cuba.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Mongolia.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg"/>
+</div></div></div></section><section class="slide"><div><div class="slide-header"><div class="badge">SLIDE 05</div><div class="slide-index">#05</div></div><h2 class="title-ar">اتجاهات ومراكز مНИИПУ</h2><h3 class="title-ru">Направления и центры МНИИПУ</h3><div class="text-block"><div class="body-ar">اتجاهات ومراكز مНИИПУ:
+
+التطور التكنولوجي
+– مركز التقنيات المتكاملة والطبيعية
+– مركز إدخال التقنيات المتقدمة
+– المركز الدولي للتقنيات العالية EADS‑MNIIPU
+
+التحول الرقمي
+– مركز الاقتصاد الرقمي والمجتمع
+– مركز الأساليب الرياضية في الأنظمة الحاسوبية المعتمدة على المعرفة
+– مركز المعايير المعلوماتية الدولية
+– مركز أنظمة البيانات الضخمة
+– مركز مشكلات الذكاء الاصطناعي
+– مركز أبحاث الأنطولوجيا لهندسة الأنظمة المعلوماتية
+
+التنمية الإقليمية والمكانية
+– مركز الدراسات الإقليمية
+– مركز الشراكات التكاملية
+– مركز إدارة الأنظمة الاجتماعية‑الاقتصادية الكبرى
+– مركز التنمية الدولية
+– مركز التعاون مع الجماعة الأوروبية
+
+الإدارة المتكاملة
+– المركز الدولي لبحوث تطوير المنافسة
+– المركز الدولي للاستشارات الإدارية والاستثمارية
+– مركز التنبؤ
+– مركز الإدارة المتكاملة
+– مركز إدارة الأصول المتعثرة
+– مركز إدارة أسواق العملات والمواد الخام والطاقة
+– مركز أخلاقيات الإدارة
+– مركز التخطيط الاستراتيجي والاستشراف
+– مركز المنافسة العالمية
+
+تاريخ الإدارة
+– مركز مشكلات الإدارة في حالات الحرب والسلام
+– مركز التاريخ المالي‑الاقتصادي والسياسي للإدارة
+– مركز دراسة النخبة والجيوسياسة
+
+الصحة والبيئة
+– مركز إدارة الصحة وطول العمر
+– مركز المشكلات البيئية‑التكنولوجية
+
+التعليم
+– مركز المشاريع التعليمية الدولية
+– مركز البرامج الشبابية الابتكارية
+
+الإدارة في القطاعات الاستراتيجية
+– مركز مشكلات الحماية الكوكبية
+– مركز السلامة البيئية والكيميائية
+– مركز القانون النووي والمائي
+– مركز إدارة الأنشطة الفضائية
+– مركز إدارة صناعة الإلكترونيات
+– مركز إدارة العلوم
+– مركز أبحاث النظام المالي العالمي والسياسة النقدية
+– مركز اقتصاد المعرفة
+
+مشاريع الاتصال والإعلام
+– مركز تقنيات التأثير
+– مركز الاتصالات الدولية التكاملية
+– مركز المشاريع الإعلامية الدولية
+– مجلة «مشكلات نظرية وممارسة الإدارة»
+– مركز تكنولوجيا الإعلام
+
+التقييم والتصنيف
+– الوكالة الدولية للتصنيف
+
+الأرشيف العلمي للمعهد
+سجل التقنيات المتقدمة واللجان.</div><div class="body-ru">ТЕХНОЛОГИЧЕСКОЕ РАЗВИТИЕ
+– Центр цельных и природоподобных технологий
+– Центр внедрения опережающих технологий
+– Международный центр высоких технологий EADS – МНИИПУ
+
+ЦИФРОВАЯ ТРАНСФОРМАЦИЯ
+– Центр цифровой экономики и общества
+– Центр математических методов в компьютерных системах, основанных на знаниях
+– Центр международных информационных стандартов
+– Центр систем больших данных
+– Центр проблем искусственного интеллекта
+– Научно-исследовательский центр онтологий системной инженерии информационных систем
+
+ПРОСТРАНСТВЕННОЕ И РЕГИОНАЛЬНОЕ РАЗВИТИЕ
+– Центр регионалистики
+– Центр интеграционных партнёрств
+– Центр проблем управления крупными социально–экономическими системами
+– Центр международного развития
+– Центр по сотрудничеству с Европейским сообществом
+
+ИНТЕГРИРОВАННОЕ УПРАВЛЕНИЕ
+– Международный научно-исследовательский центр развития конкуренции
+– Международный центр управленческого и инвестиционного консультирования
+– Центр прогнозирования
+– Центр интегрированного управления
+– Центр управления проблемными активами
+– Центр проблем управления валютными, сырьевыми и энергетическими рынками
+– Центр этики управления
+– Центр стратегического планирования и форсайта
+– Центр глобальной конкуренции
+
+ИСТОРИЯ УПРАВЛЕНИЯ
+– Центр проблем управления в условиях войны и мира
+– Центр проблем финансово-экономической и политической истории управления
+– Центр исследования элиты и геополитики
+
+ЭКОЛОГИЯ И ЗДОРОВЬЕ
+– Центр управления здоровьем и долголетием
+– Центр эколого-технологических проблем
+
+ОБРАЗОВАНИЕ
+– Центр международных образовательных проектов
+– Центр инновационных молодежных программ
+
+УПРАВЛЕНИЕ В СТРАТЕГИЧЕСКИХ ОТРАСЛЯХ И ИНФРАСТРУКТУРАХ
+– Центр проблем планетарной защиты
+– Центр проблем экологической и химической безопасности
+– Центр ядерного и водного права
+– Центр проблем управления космической деятельностью
+– Центр проблем управления электронной промышленностью
+– Центр проблем управления наукой
+– Центр исследований глобальной финансовой системы и денежно-кредитной политики ведущих стран
+– Центр экономики знаний
+
+КОММУНИКАЦИОННЫЕ ПРОЕКТЫ И МЕДИА
+– Центр технологий влияния
+– Центр международных интегративных коммуникаций
+– Центр международных медийных программ
+– Журнал «Проблемы теории и практики управления»
+– Центр медиатехнологий
+
+РЕЙТИНГИ, СЕРТИФИКАЦИЯ И ЭКСПЕРТИЗА
+– Международное рейтинговое агентство
+
+НАУЧНЫЙ АРХИВ МНИИПУ
+РЕЕСТР ОПЕРЕЖАЮЩИХ ТЕХНОЛОГИЙ. КОМИТЕТЫ.</div><div class="chart-card"><div class="chart-title"><strong>Структура центров МНИИПУ</strong><span>Схематичное распределение тематических направлений</span></div><div class="chart-body"><svg aria-label="Диаграмма центров" height="74" role="img" viewbox="0 0 120 120" width="74"><circle cx="60" cy="60" fill="none" r="36" stroke="rgba(148,163,184,0.35)" stroke-width="18"></circle><circle cx="60" cy="60" fill="none" r="36" stroke="rgba(34,197,94,0.9)" stroke-dasharray="140 226" stroke-linecap="round" stroke-width="18" transform="rotate(-90 60 60)"></circle></svg><div class="chart-legend"><div class="legend-item"><div class="legend-dot"></div><span>Технологическое развитие — 18%</span></div><div class="legend-item"><div class="legend-dot"></div><span>Цифровая трансформация — 17%</span></div><div class="legend-item"><div class="legend-dot"></div><span>Региональное развитие — 12%</span></div><div class="legend-item"><div class="legend-dot"></div><span>Интегрированное управление — 20%</span></div><div class="legend-item"><div class="legend-dot"></div><span>Образование и наука — 13%</span></div><div class="legend-item"><div class="legend-dot"></div><span>Экология и здоровье — 8%</span></div><div class="legend-item"><div class="legend-dot"></div><span>Коммуникации и медиа — 7%</span></div><div class="legend-item"><div class="legend-dot"></div><span>Рейтинги и экспертиза — 5%</span></div></div></div></div></div><div class="flags-row"><div class="flags-inner">
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Bulgaria.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Flag_of_Hungary.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Flag_of_Cuba.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Mongolia.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg"/>
+</div></div></div></section><section class="slide"><div><div class="slide-header"><div class="badge">SLIDE 06</div><div class="slide-index">#06</div></div><h2 class="title-ar">بعض الشركاء</h2><h3 class="title-ru">Некоторые партнеры</h3><div class="text-block"><div class="body-ar">بعض الشركاء.</div><div class="body-ru">Некоторые партнёры.</div></div><div class="media-main"><img alt="Партнёры МНИИПУ" src="images/partners_full.png"/></div><div class="flags-row"><div class="flags-inner">
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Bulgaria.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Flag_of_Hungary.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Flag_of_Cuba.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Mongolia.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg"/>
+</div></div></div></section><section class="slide"><div><div class="slide-header"><div class="badge">SLIDE 07</div><div class="slide-index">#07</div></div><h2 class="title-ar">التعاون الدولي</h2><h3 class="title-ru">Международное сотрудничество</h3><div class="text-block"><div class="body-ar"></div><div class="body-ru"></div></div><div class="media-main"><img alt="Международное сотрудничество МНИИПУ" src="images/cooperation_flags_world.png"/></div><div class="flags-row"><div class="flags-inner">
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Bulgaria.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Flag_of_Hungary.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Flag_of_Cuba.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Mongolia.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg"/>
+</div></div></div></section><section class="slide"><div><div class="slide-header"><div class="badge">SLIDE 08</div><div class="slide-index">#08</div></div><h2 class="title-ar">جهات الاتصال</h2><h3 class="title-ru">Контакты</h3><div class="text-block"><div class="body-ar">المعهد الدولي للبحوث في مشكلات الإدارة
+العنوان: روسيا، موسكو، جادة الذكرى الستين لأكتوبر، مبنى 9
+هاتف: ‎+7 (499) 783‑3202
+البريد الإلكتروني: info@mniipu.org</div><div class="body-ru">Международный научно-исследовательский институт проблем управления
+Адрес: Россия, Москва, проспект 60-летия Октября, д. 9
+Тел.: +7 (499) 783-3202
+E-mail: info@mniipu.org</div></div><div class="flags-row"><div class="flags-inner">
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Bulgaria.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Flag_of_Hungary.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Flag_of_Cuba.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Mongolia.svg"/>
+<img alt="" height="22" src="https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg"/>
+</div></div></div></section><div class="footnote">МНИИПУ · Электронная презентация · المعهد الدولي للبحوث في مشكلات الإدارة — عرض تعريفي إلكتروني</div></div></body></html>
